@@ -4,7 +4,8 @@
 
 .cv {
   display: flex;
-
+  min-height: 100%;
+  
   @media (max-width: 1050px) {
     flex-direction: column;
   }
