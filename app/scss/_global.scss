@@ -1,0 +1,114 @@
+@import 'fonts';
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Raleway:400,700&display=swap');
+
+@mixin gradient-bg {
+  background-image: linear-gradient(45deg, #fb3958, #ffc838, #6dc993, #458eff, #ff6f91, #d65db1, #845ec2);
+}
+
+$aside-bg: #282f35;
+$text-lg: #f7f7f7;
+$text-md: #929292;
+$text-sm: #848789;
+
+html {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html,
+body{
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+body{
+  @include gradient-bg;
+  background-size: 500%;
+  animation: anim-bg 120s linear infinite alternate;
+  font-family: 'Roboto', sans-serif;
+  // font-family: 'Raleway', sans-serif;
+}
+
+@keyframes anim-bg {
+  from{
+    background-position: left;
+  }
+
+  to{
+    background-position: right;
+  }
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  color: #000;
+}
+
+.container{
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex: 1 0 100%;
+  width: 100%;
+
+  @media(max-width: 1000px) {
+    .container {
+      max-width: 970px;
+    }
+  }
+
+  @media(max-width: 969px) {
+    .container {
+      max-width: 750px;
+    }
+  }
+
+  @media(max-width: 749px) {
+    .container {
+      max-width: none;
+    }
+  }
+}
+
+.title{
+  font-size: 28px;
+  font-weight: 700;
+  color: $text-lg;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 80px;
+    height: 2px;
+    border-radius: 2px;
+    background-color: $text-lg;
+
+    @media (max-width: 1050px) {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (max-width: 1050px) {
+    text-align: center;
+  }
+}
