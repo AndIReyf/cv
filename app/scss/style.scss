@@ -335,13 +335,17 @@
     // ======================================================Gallery
     &__gallery {
       display: grid;
-      grid-template-rows: repeat(6, 1fr);
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(8, 1fr);
+      grid-template-columns: repeat(6, 1fr);
       grid-gap: 10px;
       height: 100%;
 
       @media (max-width: 720px) {
         grid-gap: 0px;
+      }
+      @media (max-width: 580px) {
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-columns: repeat(6, 1fr);
       }
 
       &-item {
@@ -366,61 +370,32 @@
         }
 
         &.small {
-          grid-row: span 1;
-          grid-column: span 1;
+          grid-row: span 2;
+          grid-column: span 3;
 
-          @media (max-width: 720px) {
-            grid-row: span 2;
-            grid-column: span 3;
-          }
-
-          @media (max-width: 600px) {
-            grid-row: span 2;
-            grid-column: span 5;
+          @media (max-width: 580px) {
+            grid-row: span 3;
+            grid-column: span 6;
           }
         }
 
-        &.medium {
-          grid-row: span 2;
-          grid-column: span 2;
+        &.medium{
+          grid-row: span 4;
+          grid-column: span 3;
 
-          @media (max-width: 600px) {
-            grid-row: span 2;
-            grid-column: span 5;
+          @media (max-width: 580px) {
+            grid-row: span 3;
+            grid-column: span 6;
           }
         }
 
         &.large {
-          grid-row: span 3;
+          grid-row: span 4;
           grid-column: span 3;
 
-          @media (max-width: 720px) {
-            grid-row: span 2;
-          }
-
-          @media (max-width: 600px) {
-            grid-row: span 2;
-            grid-column: span 5;
-          }
-        }
-
-        &.tall {
-          grid-row: span 3;
-          grid-column: span 2;
-
-          @media (max-width: 600px) {
-            grid-row: span 2;
-            grid-column: span 5;
-          }
-        }
-
-        &.wide {
-          grid-row: span 2;
-          grid-column: span 3;
-
-          @media (max-width: 600px) {
-            grid-row: span 2;
-            grid-column: span 5;
+          @media (max-width: 580px) {
+            grid-row: span 3;
+            grid-column: span 6;
           }
         }
       }
